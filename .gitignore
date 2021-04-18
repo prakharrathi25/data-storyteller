@@ -1,0 +1,9 @@
+
+# Virtual environments
+.env
+env/
+ENV/
+env.bak/
+pythonenv*
+env\*
+env/*

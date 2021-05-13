@@ -1,0 +1,13 @@
+Column_Name,Type
+Country,Object
+Region,Categorical
+Happiness Rank,Numerical
+Happiness Score,Numerical
+Standard Error,Numerical
+Economy (GDP per Capita),Numerical
+Family,Numerical
+Health (Life Expectancy),Numerical
+Freedom,Numerical
+Trust (Government Corruption),Numerical
+Generosity,Numerical
+Dystopia Residual,Numerical

@@ -3,6 +3,7 @@ from numpy.core.defchararray import lower
 import streamlit as st
 import numpy as np
 import pandas as pd
+from pages import utils
 
 # @st.cache
 def app():
@@ -52,14 +53,11 @@ def app():
         columns = []
 
         # Iterate through the numerical and categorical columns and save in columns 
-        for col in numeric_cols:
-            columns.append([col.lower(), 'numeric'])
-        for col in categorical_cols:
-            columns.append([col.lower(), 'categorical']) 
+        columns = utils.genMetaData(data) 
         
         # Save the columns as a dataframe with categories
         # Here column_name is the name of the field and the type is whether it's numerical or categorical
-        columns_df = pd.DataFrame(data = columns, columns = ['column_name', 'type'])
+        columns_df = pd.DataFrame(columns, columns = ['column_name', 'type'])
         columns_df.to_csv('data/metadata/column_type_desc.csv', index = False)
 
         # Display columns 

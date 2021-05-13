@@ -27,7 +27,7 @@ def app():
     name = name.lower()
     
     # Design column two 
-    type = col2.selectbox("Select Column Type", ['numeric', 'categorical'])
+    type = col2.selectbox("Select Column Type", ['numeric', 'categorical','object'])
     
     st.write("""Select your column name and the new type from the data.
                 To submit all the changes, click on *Submit changes* """)

@@ -61,7 +61,7 @@ def app():
         # Here column_name is the name of the field and the type is whether it's numerical or categorical
         columns_df = pd.DataFrame(data = columns, columns = ['column_name', 'type'])
         st.dataframe(columns_df)
-        columns_df.to_csv('data/metadata/column_type_desc.csv')
+        columns_df.to_csv('data/metadata/column_type_desc.csv', index = False)
 
         ''' Change the information about column types
         Here the info of the column types can be changed using dropdowns.

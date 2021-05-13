@@ -1,0 +1,13 @@
+,column_name,type
+0,happiness rank,numeric
+1,happiness score,numeric
+2,standard error,numeric
+3,economy (gdp per capita),numeric
+4,family,numeric
+5,health (life expectancy),numeric
+6,freedom,numeric
+7,trust (government corruption),numeric
+8,generosity,numeric
+9,dystopia residual,numeric
+10,region,categorical
+11,country,categorical

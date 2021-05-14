@@ -20,8 +20,11 @@ def app():
     
     category = st.selectbox("Select Category ",Categorical)
     
-    labels = unique_Category_val[category]
+    
+    
     sizes = (df_visual[category].value_counts()/df_visual[category].count())
+    labels = sizes.keys()
+
     maxIndex = np.argmax(sizes)
     explode = []
     for i in range(len(labels)):
@@ -40,6 +43,7 @@ def app():
     
     
     categoryObject=st.selectbox("Select " + (str)(category),unique_Category_val[category])
+    st.write(cat_groups[category].get_group(categoryObject).describe())
     colName = st.selectbox("Select Column ",Numerical)
     st.line_chart(cat_groups[category].get_group(categoryObject)[colName])
     
@@ -47,7 +51,7 @@ def app():
     #st.write(cat_groups[category].get_group(categoryObject))
     
     #Basic analysis for the selected region
-    st.write(cat_groups[category].get_group(categoryObject).describe())
+    
  
 
     

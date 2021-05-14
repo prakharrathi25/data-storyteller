@@ -3,3 +3,4 @@ pandas==1.1.5
 numpy==1.19.5
 auto_ml==2.9.10
 scikit_learn==0.22
+matplotlib==3.4.2

@@ -1,10 +1,13 @@
 column_name,type
-Overall rank,numeric
-Country or region,object
-Score,numeric
-GDP per capita,numeric
-Social support,numeric
-Healthy life expectancy,numeric
-Freedom to make life choices,numeric
-Generosity,numeric
-Perceptions of corruption,categorical
+Country,object
+Region,categorical
+Happiness Rank,numerical
+Happiness Score,numerical
+Standard Error,numerical
+Economy (GDP per Capita),numerical
+Family,numerical
+Health (Life Expectancy),numerical
+Freedom,numerical
+Trust (Government Corruption),numerical
+Generosity,numerical
+Dystopia Residual,numerical

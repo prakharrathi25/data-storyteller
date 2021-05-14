@@ -8,24 +8,42 @@ def isCategorical(col):
         return True
     return False
 
+def getColumnTypes(cols):
+    Categorical=[]
+    Numerical = []
+    Object = []
+    for i in range(len(cols)):
+        if cols["type"][i]=='categorical':
+            Categorical.append(cols['column_name'][i])
+        elif cols["type"][i]=='numerical':
+            Numerical.append(cols['column_name'][i])
+        else:
+            Object.append(cols['column_name'][i])
+    return Categorical, Numerical, Object
+
 def isNumerical(col):
     return is_numeric_dtype(col)
 
 def genMetaData(df):
     col = df.columns
     ColumnType = [] 
+    Categorical = []
+    Object = []
+    Numerical = []
     for i in range(len(col)):
         if isCategorical(df[col[i]]):
             ColumnType.append((col[i],"categorical"))
+            Categorical.append(col[i])
         
         elif is_numeric_dtype(df[col[i]]):
-            ColumnType.append((col[i],"numeric"))
+            ColumnType.append((col[i],"numerical"))
+            Numerical.append(col[i])
         
         else:
             ColumnType.append((col[i],"object"))
-        
-    return ColumnType
+            Object.append(col[i])
 
+    return ColumnType
 
 def makeMapDict(col): 
     uniqueVals = list(np.unique(col))

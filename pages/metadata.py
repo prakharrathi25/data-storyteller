@@ -2,7 +2,6 @@
 import pandas as pd
 import streamlit as st 
 
-
 def app():
     """This application is created to help the user change the metadata for the uploaded file. 
     They can perform merges. Change column names and so on.  

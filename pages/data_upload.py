@@ -12,6 +12,18 @@ def app():
     # Upload the dataset and save as csv
     st.markdown("### Upload a csv file for analysis.") 
     st.write("\n")
+
+    # Code to read a single file 
+    uploaded_file = st.file_uploader("Choose a file", type = ['csv', 'xlsx'])
+    global data
+    if uploaded_file is not None:
+        try:
+            data = pd.read_csv(uploaded_file)
+        except Exception as e:
+            print(e)
+            data = pd.read_excel(uploaded_file)
+    
+    
     
     # uploaded_files = st.file_uploader("Upload your CSV file here.", type='csv', accept_multiple_files=False)
     # # Check if file exists 
@@ -30,7 +42,7 @@ def app():
     #     raw_data = pd.concat(uploaded_data_read)
     
     # read temp data 
-    data = pd.read_csv('data/2015.csv')
+    # data = pd.read_csv('data/2015.csv')
 
 
     ''' Load the data and save the columns with categories as a dataframe. 
@@ -39,7 +51,10 @@ def app():
         
         # Raw data 
         st.dataframe(data)
-
+        
+        # Save the data to a new file 
+        data.to_csv('data/main_data.csv', index=False)
+        
         # Generate a pandas profiling report
         # if st.button("Generate an analysis report"):
         # 	pass

@@ -16,13 +16,13 @@ def genMetaData(df):
     ColumnType = [] 
     for i in range(len(col)):
         if isCategorical(df[col[i]]):
-            ColumnType.append((col[i],"Categorical"))
+            ColumnType.append((col[i],"categorical"))
         
         elif is_numeric_dtype(df[col[i]]):
-            ColumnType.append((col[i],"Numerical"))
+            ColumnType.append((col[i],"numeric"))
         
         else:
-            ColumnType.append((col[i],"Object"))
+            ColumnType.append((col[i],"object"))
         
     return ColumnType
 

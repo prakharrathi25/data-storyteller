@@ -1,9 +1,12 @@
 # Import necessary libraries
 import json
-import pandas as pd 
-import streamlit as st
-# import sklearn 
 
+import pandas as pd
+import streamlit as st
+
+# Machine Learning 
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 
 def app():
     """This application helps in running machine learning models without having to write explicit code 
@@ -44,3 +47,12 @@ def app():
         st.write("Run Models. Need sklearn import")
         st.write(y_var)
         st.write(X_var)
+
+        # Divide the data into test and train set 
+        X = data[X_var]
+        y = data[y_var]
+
+        # Perform encoding
+        X = pd.get_dummies(X)
+        le = LabelEncoder()
+        y = le.fit_transform(y)

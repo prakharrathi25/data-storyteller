@@ -1,4 +1,5 @@
 streamlit==0.80.0
-numpy==1.19.5
 pandas==1.1.5
-scikit_learn==0.24.2
+numpy==1.19.5
+auto_ml==2.9.10
+scikit_learn==0.22

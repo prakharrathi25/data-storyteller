@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from pages import utils
 
+
 # @st.cache
 def app():
     st.markdown("## Data Upload")
@@ -55,8 +56,11 @@ def app():
         # Save the data to a new file 
         data.to_csv('data/main_data.csv', index=False)
         
-        # Generate a pandas profiling report
-        # if st.button("Generate an analysis report"):
+        #Generate a pandas profiling report
+        if st.button("Generate an analysis report"):
+            utils.getProfile(data)
+            #Open HTML file
+
         # 	pass
 
         # Collect the categorical and numerical columns 

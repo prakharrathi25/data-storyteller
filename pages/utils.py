@@ -1,12 +1,17 @@
 import numpy as np 
 import pandas as pd 
 from pandas.api.types import is_numeric_dtype
+from pandas_profiling import ProfileReport
 
 def isCategorical(col):
     unis = np.unique(col)
     if len(unis)<0.2*len(col):
         return True
     return False
+
+def getProfile(data):
+    report = ProfileReport(data)
+    report.to_file(output_file = 'data/output.html')
 
 def getColumnTypes(cols):
     Categorical=[]

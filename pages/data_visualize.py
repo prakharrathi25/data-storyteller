@@ -24,8 +24,9 @@ def app():
     
     sizes = (df_visual[category].value_counts()/df_visual[category].count())
     labels = sizes.keys()
-
-    maxIndex = np.argmax(sizes)
+    print(df_visual.head())
+    maxIndex = np.argmax(np.array(sizes))
+    print(maxIndex)
     explode = []
     for i in range(len(labels)):
         if maxIndex==i:

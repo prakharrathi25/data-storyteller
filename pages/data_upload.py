@@ -52,7 +52,8 @@ def app():
         
         # Raw data 
         st.dataframe(data)
-        utils.getProfile(data)
+        #utils.getProfile(data)
+        #st.markdown("<a href='output.html' download target='_blank' > Download profiling report </a>",unsafe_allow_html=True)
         #HtmlFile = open("data/output.html", 'r', encoding='utf-8')
         #source_code = HtmlFile.read() 
         #components.iframe("data/output.html")# Save the data to a new file 

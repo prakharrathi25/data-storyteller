@@ -45,7 +45,8 @@ def app():
     categoryObject=st.selectbox("Select " + (str)(category),unique_Category_val[category])
     st.write(cat_groups[category].get_group(categoryObject).describe())
     colName = st.selectbox("Select Column ",Numerical)
-    st.line_chart(cat_groups[category].get_group(categoryObject)[colName])
+    st.bar_chart(cat_groups[category].get_group(categoryObject)[colName])
+    #st.line_chart(cat_groups[category].get_group(categoryObject)[colName])
     
     #Showing details for the selected choices
     #st.write(cat_groups[category].get_group(categoryObject))

@@ -4,7 +4,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from pages import utils
-
+import streamlit.components.v1 as components 
 
 # @st.cache
 def app():
@@ -52,13 +52,15 @@ def app():
         
         # Raw data 
         st.dataframe(data)
-        
-        # Save the data to a new file 
+        utils.getProfile(data)
+        #HtmlFile = open("data/output.html", 'r', encoding='utf-8')
+        #source_code = HtmlFile.read() 
+        #components.iframe("data/output.html")# Save the data to a new file 
         data.to_csv('data/main_data.csv', index=False)
         
         #Generate a pandas profiling report
-        if st.button("Generate an analysis report"):
-            utils.getProfile(data)
+        #if st.button("Generate an analysis report"):
+        #    utils.getProfile(data)
             #Open HTML file
 
         # 	pass

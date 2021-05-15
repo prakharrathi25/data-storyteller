@@ -7,7 +7,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) -->
 [![pythonbadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
-# 📱 Data Storyteller 🏥
+# 📱 Data Storyteller 📉
 
 _**THINKING ABOUT SOME QUOTE**_ <br />
 

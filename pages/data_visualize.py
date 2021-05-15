@@ -24,18 +24,11 @@ def app():
     
     sizes = (df_visual[category].value_counts()/df_visual[category].count())
     labels = sizes.keys()
-    print(df_visual.head())
+
     maxIndex = np.argmax(np.array(sizes))
-    print(maxIndex)
-    explode = []
-    for i in range(len(labels)):
-        if maxIndex==i:
-            explode.append(0.1)
-            
-        else:
-            explode.append(0)
+    explode = [0]*len(labels)
+    explode[int(maxIndex)] = 0.1
     explode = tuple(explode)
-    
     
     fig1, ax1 = plt.subplots()
     ax1.pie(sizes,explode = explode, labels=labels, autopct='%1.1f%%',shadow=False, startangle=0)
@@ -53,10 +46,3 @@ def app():
     #st.write(cat_groups[category].get_group(categoryObject))
     
     #Basic analysis for the selected region
-    
- 
-
-    
-    
-    
-   

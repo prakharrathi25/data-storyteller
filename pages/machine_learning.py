@@ -1,5 +1,6 @@
 # Import necessary libraries
 import json
+import joblib
 
 import pandas as pd
 import streamlit as st
@@ -45,16 +46,17 @@ def app():
         if y_var in X_var:
             st.error("Warning! Y variable cannot be present in your X-variable.")
 
-        # Add to model parameters 
-        params['prediction_vars'] = {
-                'X': X_var,
-                'y': y_var
-        }
-
         # Option to select predition type 
         pred_type = st.radio("Select the type of process you want to run.", 
                             options=["Regression", "Classification"], 
                             help="Write about reg and classification")
+
+        # Add to model parameters 
+        params = {
+                'X': X_var,
+                'y': y_var, 
+                'pred_type': pred_type,
+        }
 
         # if st.button("Run Models"):
 
@@ -66,7 +68,7 @@ def app():
         y = data[y_var]
 
         # Perform data imputation 
-        st.write("THIS IS WHERE DATA IMPUTATION WILL HAPPEN")
+        # st.write("THIS IS WHERE DATA IMPUTATION WILL HAPPEN")
         
         # Perform encoding
         X = pd.get_dummies(X)
@@ -92,9 +94,13 @@ def app():
                             value=0.8, 
                             help="This is the value which will be used to divide the data for training and testing. Default = 80%")
 
-        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=size)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=size, random_state=42)
         st.write("Number of training samples:", X_train.shape[0])
         st.write("Number of testing samples:", X_test.shape[0])
+
+        # Save the model params as a json file
+        with open('data/metadata/model_params.json', 'w') as json_file:
+            json.dump(params, json_file)
 
         ''' RUNNING THE MACHINE LEARNING MODELS '''
         if pred_type == "Regression":
@@ -113,7 +119,14 @@ def app():
             dt_model = DecisionTreeRegressor()
             dt_model.fit(X_train, y_train)
             dt_r2 = dt_model.score(X_test, y_test)
-            model_r2.append(['Decision Tree Regression', lr_r2])
+            model_r2.append(['Decision Tree Regression', dt_r2])
+
+            # Save one of the models 
+            if dt_r2 > lr_r2:
+                # save decision tree 
+                joblib.dump(dt_model, 'data/metadata/model_reg.sav')
+            else: 
+                joblib.dump(lr_model, 'data/metadata/model_reg.sav')
 
             # Make a dataframe of results 
             results = pd.DataFrame(model_r2, columns=['Models', 'R2 Score']).sort_values(by='R2 Score', ascending=False)
@@ -137,6 +150,12 @@ def app():
             dtc_acc = dtc_model.score(X_test, y_test)
             model_acc.append(['Decision Tree Regression', dtc_acc])
 
+            # Save one of the models 
+            if dtc_acc > lc_acc:
+                # save decision tree 
+                joblib.dump(dtc_model, 'data/metadata/model_classification.sav')
+            else: 
+                joblib.dump(lc_model, 'data/metadata/model_classificaton.sav')
 
             # Make a dataframe of results 
             results = pd.DataFrame(model_acc, columns=['Models', 'Accuracy']).sort_values(by='Accuracy', ascending=False)

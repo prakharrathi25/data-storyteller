@@ -26,7 +26,7 @@ def app():
                 cat_groups = {Categorical[i]: df_visual.groupby(Categorical[i])}
                 
         
-        category = st.selectbox("Select Category ",Categorical)
+        category = st.selectbox("Select Category ", Categorical + Object)
 
         sizes = (df_visual[category].value_counts()/df_visual[category].count())
 
@@ -55,8 +55,6 @@ def app():
         st.pyplot(fig2)
         
         
-
-
         categoryObject=st.selectbox("Select " + (str)(category),unique_Category_val[category])
         st.write(cat_groups[category].get_group(categoryObject).describe())
         colName = st.selectbox("Select Column ",Numerical)

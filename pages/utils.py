@@ -1,7 +1,7 @@
 import numpy as np 
 import pandas as pd 
 from pandas.api.types import is_numeric_dtype
-from pandas_profiling import ProfileReport
+# from pandas_profiling import ProfileReport
 
 def isCategorical(col):
     unis = np.unique(col)

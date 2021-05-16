@@ -1,16 +1,12 @@
-<!-- Add an image of the product -->
-<!-- ![Data](https://socialify.git.ci/soumyajit4419/MedHub_360/image?forks=1&issues=1&language=1&pulls=1&stargazers=1&theme=Light) -->
+<!-- Add logo -->
 
-<!-- **[Devfolio Submission](https://devfolio.co/submissions/medhub-4)** &nbsp; &nbsp; &nbsp; **[YouTube Video](https://youtu.be/Rfm2tWCNOn4)** -->
 
-<!-- [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) -->
+[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 [![pythonbadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
 # 📱 Data Storyteller 📉
 
-_**THINKING ABOUT SOME QUOTE**_ <br />
-
+_**ONE STOP SOLUTION FOR ALL YOUR DATA NEEDS**_ 
 ## Introduction 
 
 As per Gartner [2], the analytics and business intelligence platform market has transitioned from the visual data discovery era to the augmented era. Data and analytics leaders should begin piloting capabilities that enable the “augmented consumer”.
@@ -19,7 +15,7 @@ With the technology advancements, the organisation today has the advantage of ta
 
 ## Tool Description 
 
-Data Storyteller is an AI based tool that can take a data set, identify patterns in the data, can interpret the result, and can then produce an output story that is understandable to a business user based on the context. It is able to pro-actively analyse data on behalf of users and generate smart feeds using natural language generation techniques which can then be consumed easily by business users with very less efforts. The application has been built keeping in mind a rather elementary user and is hence, easily usable and understandable.
+Data Storyteller is an AI based tool that can take a data set, identify patterns in the data, can interpret the result, and can then produce an output story that is understandable to a business user based on the context. It is able to pro-actively analyse data on behalf of users and generate smart feeds using natural language generation techniques which can then be consumed easily by business users with very less efforts. The application has been built keeping in mind a rather elementary user and is hence, easily usable and understandable. This also uses a **multipage implementation** of Streamlit Library using Class based pages. 
 
 ## Features 
 
@@ -37,6 +33,12 @@ The application also uses Streamlit for a multiclass page implementation which c
 _📌 **Data Upload**_ <br/>
 
 _📌 **Change Metadata**_ <br/>
+
+_📌 **Machine Learning**_ <br/>
+
+_📌 **Data Visualization**_ <br/>
+
+_📌 **Y-Parameter Optimization**_ <br/>
 
 ## Technology Stack 
 
@@ -64,7 +66,13 @@ $ pip install -r requirements.txt
 ```
 $ streamlit run app.py
 ```
-## 🤝 How to Contribute?
+
+## Other Content
+
+**[Video Walkthrough](https://drive.google.com/file/d/1C-WMgJ6tLfVMAz4mS-OQF9-9-0GhgSWJ/view?usp=sharing)**
+
+**[Presentation](https://drive.google.com/file/d/1sWfQmXHV1cLLoHMDTFN_w61rAMXhP8J3/view?usp=sharing)
+## 🤝 How to Contribute? [3]
 
 - Take a look at the Existing Issues or create your own Issues!
 - Wait for the Issue to be assigned to you after which you can start working on it.
@@ -88,6 +96,8 @@ $ streamlit run app.py
 [1] SAP Hackathon: https://sap-code.hackerearth.com/challenges/hackathon/sap-code/custom-tab/data-4-storytelling/#Data%204%20Storytelling (used for the `README.md` introduction)
 
 [2] Gartner: https://www.gartner.com/en/documents/3982132
+
+[3] Soumyajit Behera: https://github.com/soumyajit4419/MedHub_360
 
 
 ## Contact

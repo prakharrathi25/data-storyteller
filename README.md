@@ -29,13 +29,28 @@ Given data/analytics output, the tool can:-
 
 ## 📝 Module-Wise Description
 
-The application also uses Streamlit for a multiclass page implementation which can be viewed in the `multipage.py` file. 
+The application also uses Streamlit for a multiclass page implementation which can be viewed in the `multipage.py` file. The UI of the application can be seen here. The application is divided into multiple modules, each of which have been described below.
+
+![UI of the application](https://i.stack.imgur.com/MOVpz.png)
+
 
 _📌 **Data Upload**_ <br/>
 
+This module deals with the data upload. It can take csv and excel files. As soon as the data is uploaded, it creates a copy of the data to ensure that we don't have to read the data multiple times. It also saves the columns and their data types along with displaying them for the user. This is used to upload and save the data and it's column types which will be further needed at a later stage. 
+
 _📌 **Change Metadata**_ <br/>
 
+Once the column types are saved in the metadata, we need to give the user the option to change the type. This is to ensure that the automatic column tagging can be overridden if the user wishes. For example a binary column with 0 and 1s can be tagged as numerical and the user might have to correct it. The three data types available are:
+
+* Numerical 
+* Categorical 
+* Object
+
+The correction happens immediately and is saved at that moment. 
+
 _📌 **Machine Learning**_ <br/>
+
+This section automates the process of machine learning by giving the user the option to select X and y variables and letting us do everything else. The user can specify which columns they need for machine learning and then select the type of process - regression and classficiation. The application selects multiple models and saves the best one as a binary `.sav` file to be used in the future for inferencing. The accuracy or R2 score is shown right then and there with the model running in the background.  
 
 _📌 **Data Visualization**_ <br/>
 
@@ -47,6 +62,7 @@ _📌 **Y-Parameter Optimization**_ <br/>
 2. Streamlit 
 3. Pandas
 4. Scikit-Learn
+5. Seaborn
 
 # How to Run 
 
@@ -72,7 +88,7 @@ $ streamlit run app.py
 
 **[Video Walkthrough](https://drive.google.com/file/d/1C-WMgJ6tLfVMAz4mS-OQF9-9-0GhgSWJ/view?usp=sharing)**
 
-**[Presentation](https://drive.google.com/file/d/1sWfQmXHV1cLLoHMDTFN_w61rAMXhP8J3/view?usp=sharing)**
+**[Presentation](https://drive.google.com/file/d/1vlmXN_wNQdf6Y_hpVKV2QD1ub80izIiK/view?usp=sharing)**
 
 ## 🤝 How to Contribute? [3]
 

@@ -1,3 +1,5 @@
 .linux_env
 # Virtual environments
 env/
+__pycache__/
+pages/__pycache__/

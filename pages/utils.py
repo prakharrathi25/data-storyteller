@@ -69,7 +69,7 @@ def getRedundentColumns(corr, y: str, threshold =0.1):
     redunt = []
     k = 0
     for ind, c in enumerate(corr[y]):
-        if c<threshold: 
+        if c<1-threshold: 
             redunt.append(cols[ind])
     return redunt
 

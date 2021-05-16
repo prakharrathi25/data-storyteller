@@ -57,11 +57,5 @@ def app():
 
     st.bar_chart(cat_groups[category].get_group(categoryObject)[colName])
     
+    ## Code base to drop redundent columns
     
-    
- 
-
-    
-    
-    
-   

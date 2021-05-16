@@ -3,7 +3,7 @@ import streamlit as st
 
 # Custom imports 
 from multipage import MultiPage
-from pages import data_upload, data, model, machine_learning, metadata, data_visualize # import your pages here
+from pages import data_upload, data, model, machine_learning, metadata, data_visualize, redundant # import your pages here
 
 # Create an instance of the app 
 app = MultiPage()
@@ -16,6 +16,7 @@ app.add_page("Upload Data", data_upload.app)
 app.add_page("Change Metadata", metadata.app)
 app.add_page("Machine Learning", machine_learning.app)
 app.add_page("Data Analysis",data_visualize.app)
+app.add_page("Redundant Columns",redundant.app)
 
 # The main app
 app.run()

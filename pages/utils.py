@@ -62,6 +62,20 @@ def mapunique(df, colName):
     df[colName] =  df[colName].map(dict_)
     return cat 
 
+    
+## For redundant columns
+def getRedundentColumns(corr, y: str, threshold =0.1): 
+    cols = corr.columns
+    redunt = []
+    k = 0
+    for ind, c in enumerate(corr[y]):
+        if c<threshold: 
+            redunt.append(cols[ind])
+    return redunt
+
+def newDF(df, columns2Drop):
+    newDF = df.drop(columns2Drop, axis = 'columns')
+    return newDF
 
 if __name__ == '__main__':
     df = {"Name": ["salil", "saxena", "for", "int"]}

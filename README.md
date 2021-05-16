@@ -1,4 +1,5 @@
 <!-- Add logo -->
+![App Logo](https://i.stack.imgur.com/ARgpq.jpg)
 
 
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
@@ -71,7 +72,8 @@ $ streamlit run app.py
 
 **[Video Walkthrough](https://drive.google.com/file/d/1C-WMgJ6tLfVMAz4mS-OQF9-9-0GhgSWJ/view?usp=sharing)**
 
-**[Presentation](https://drive.google.com/file/d/1sWfQmXHV1cLLoHMDTFN_w61rAMXhP8J3/view?usp=sharing)
+**[Presentation](https://drive.google.com/file/d/1sWfQmXHV1cLLoHMDTFN_w61rAMXhP8J3/view?usp=sharing)**
+
 ## 🤝 How to Contribute? [3]
 
 - Take a look at the Existing Issues or create your own Issues!

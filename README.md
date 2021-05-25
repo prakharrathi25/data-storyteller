@@ -1,6 +1,7 @@
 <!-- Add logo -->
-![App Logo](https://i.stack.imgur.com/ARgpq.jpg)
+<!--  ![App Logo](https://i.stack.imgur.com/ARgpq.jpg) -->
 
+![data-storyteller](https://socialify.git.ci/prakharrathi25/data-storyteller/image?description=1&descriptionEditable=Automated%20tool%20for%20data%20analysis%2C%20visualization%2C%20feature%20selection%2C%20machine%20learning%20and%20inference%20in%20one%20application!&font=Bitter&forks=1&logo=https%3A%2F%2Fcamo.githubusercontent.com%2Fba46960c1170c1d56a4fcfdd375be6b13852795e31523ea76bde3366f021c25d%2F68747470733a2f2f692e737461636b2e696d6775722e636f6d2f41526770712e6a7067&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Light)
 
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 [![pythonbadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)

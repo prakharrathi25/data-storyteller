@@ -80,7 +80,7 @@ tornado==6.1
 traitlets==4.3.3
 typing-extensions==3.10.0.0
 tzlocal==2.1
-urllib3==1.26.4
+urllib3==1.26.5
 validators==0.18.2
 watchdog==2.1.1
 wcwidth==0.2.5

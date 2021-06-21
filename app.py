@@ -5,7 +5,7 @@ from PIL import  Image
 
 # Custom imports 
 from multipage import MultiPage
-from pages import data_upload, machine_learning, metadata, data_visualize, redundant, inference # import your pages here
+from pages import data_upload, machine_learning, metadata, data_visualize, redundant # import your pages here
 
 # Create an instance of the app 
 app = MultiPage()

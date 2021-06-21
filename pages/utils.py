@@ -9,9 +9,9 @@ def isCategorical(col):
         return True
     return False
 
-def getProfile(data):
-    report = ProfileReport(data)
-    report.to_file(output_file = 'data/output.html')
+# def getProfile(data):
+#     report = ProfileReport(data)
+#     report.to_file(output_file = 'data/output.html')
 
 def getColumnTypes(cols):
     Categorical=[]

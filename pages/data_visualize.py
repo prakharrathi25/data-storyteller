@@ -1,11 +1,9 @@
-from numpy.core.defchararray import index
 import streamlit as st
 import numpy as np
 import pandas as pd
 from pages import utils
 import matplotlib.pyplot as plt
 import seaborn as sns
-import altair as alt
 import os
 
 def app():

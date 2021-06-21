@@ -1,1 +1,1 @@
-{"X": ["Happiness Rank"], "y": "Happiness Score", "pred_type": "Regression"}
+{"X": ["bundesland", "ags5", "kr_to_ga", "kr_to_bett"], "y": "kr_to_be", "pred_type": "Regression"}

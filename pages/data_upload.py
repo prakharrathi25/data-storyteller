@@ -1,10 +1,7 @@
-import collections
-from numpy.core.defchararray import lower
 import streamlit as st
 import numpy as np
 import pandas as pd
 from pages import utils
-import streamlit.components.v1 as components 
 
 # @st.cache
 def app():

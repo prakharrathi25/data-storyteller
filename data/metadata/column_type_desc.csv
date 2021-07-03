@@ -1,10 +1,9 @@
 column_name,type
 _id,numerical
-ags2,categorical
-bundesland,categorical
+ags2,numeric
 ags5,numerical
 kreis,object
-kr_to_be,numerical
-kr_to_bett,numerical
-kr_to_ga,numerical
-kr_to_gue,numerical
+number_accomodation_establishments,numerical
+number_of_beds,numerical
+number_of_guests,numerical
+guests_staying_overnight,numerical

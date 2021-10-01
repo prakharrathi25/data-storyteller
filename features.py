@@ -26,13 +26,5 @@ def ft(text):
 		'physical_or_mental_disability':['physical disability','mental disability'],
 		'political_affiliations_and_opinions':['political affiliations','political party affiliation','political opinions'],
 		'prescriptions':['prescription'],
-		'religious_and_philosophical_belief':['religious belief','religion','philosophy'],
-		'retina_scan':['retina scan'],
-		'sexual_orientation':['sexual_orientation'],
-		'sexual_partners':['sexual partners'],
-		'signature':['signature'],
-		'social_security':['social security','social insurance number'],
-		'trade_union_membership':['trade union membership'],
-		'voice_signature':['voice signature']
 
 	}

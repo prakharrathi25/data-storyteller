@@ -22,8 +22,8 @@ def app():
         for i in range(len(Categorical)):
                 unique_Category_val = {Categorical[i]: utils.mapunique(df_analysis, Categorical[i])}
                 cat_groups = {Categorical[i]: df_visual.groupby(Categorical[i])}
-                
-        
+
+
         category = st.selectbox("Select Category ", Categorical + Object)
 
         sizes = (df_visual[category].value_counts()/df_visual[category].count())
@@ -34,15 +34,15 @@ def app():
         explode = [0]*len(labels)
         explode[int(maxIndex)] = 0.1
         explode = tuple(explode)
-        
+
         fig1, ax1 = plt.subplots()
         ax1.pie(sizes,explode = explode, labels=labels, autopct='%1.1f%%',shadow=False, startangle=0)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax1.set_title('Distribution for Categorical Column - ' + (str)(category))
+        ax1.set_title(f'Distribution for Categorical Column - {str(category)}')
         st.pyplot(fig1)
-        
+
         corr = df_analysis.corr(method='pearson')
-        
+
         fig2, ax2 = plt.subplots()
         mask = np.zeros_like(corr, dtype=np.bool)
         mask[np.triu_indices_from(mask)] = True
@@ -51,9 +51,12 @@ def app():
         sns.heatmap(corr, mask=mask, linewidths=.5, cmap=cmap, center=0,ax=ax2)
         ax2.set_title("Correlation Matrix")
         st.pyplot(fig2)
-        
-        
-        categoryObject=st.selectbox("Select " + (str)(category),unique_Category_val[category])
+
+
+        categoryObject = st.selectbox(
+            f"Select {str(category)}", unique_Category_val[category]
+        )
+
         st.write(cat_groups[category].get_group(categoryObject).describe())
         colName = st.selectbox("Select Column ",Numerical)
 

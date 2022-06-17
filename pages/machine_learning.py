@@ -20,7 +20,7 @@ def app():
     by the user. It runs some basic models and let's the user select the X and y variables. 
     """
     
-    # Load the data 
+    # Load the data
     if 'main_data.csv' not in os.listdir('data'):
         st.markdown("Please upload data through `Upload Data` page!")
     else:
@@ -62,14 +62,14 @@ def app():
 
         st.write(f"**Variable to be predicted:** {y_var}")
         st.write(f"**Variable to be used for prediction:** {X_var}")
-        
+
         # Divide the data into test and train set 
         X = data[X_var]
         y = data[y_var]
 
         # Perform data imputation 
         # st.write("THIS IS WHERE DATA IMPUTATION WILL HAPPEN")
-        
+
         # Perform encoding
         X = pd.get_dummies(X)
 
@@ -77,13 +77,13 @@ def app():
         if not isNumerical(y):
             le = LabelEncoder()
             y = le.fit_transform(y)
-            
+
             # Print all the classes 
             st.write("The classes and the class allotted to them is the following:-")
             classes = list(le.classes_)
             for i in range(len(classes)):
                 st.write(f"{classes[i]} --> {i}")
-        
+
 
         # Perform train test splits 
         st.markdown("#### Train Test Splitting")
@@ -106,15 +106,11 @@ def app():
         if pred_type == "Regression":
             st.write("Running Regression Models on Sample")
 
-            # Table to store model and accurcy 
-            model_r2 = []
-
             # Linear regression model 
             lr_model = LinearRegression()
             lr_model.fit(X_train, y_train)
             lr_r2 = lr_model.score(X_test, y_test)
-            model_r2.append(['Linear Regression', lr_r2])
-
+            model_r2 = [['Linear Regression', lr_r2]]
             # Decision Tree model 
             dt_model = DecisionTreeRegressor()
             dt_model.fit(X_train, y_train)
@@ -131,19 +127,15 @@ def app():
             # Make a dataframe of results 
             results = pd.DataFrame(model_r2, columns=['Models', 'R2 Score']).sort_values(by='R2 Score', ascending=False)
             st.dataframe(results)
-        
+
         if pred_type == "Classification":
             st.write("Running Classfication Models on Sample")
-
-            # Table to store model and accurcy 
-            model_acc = []
 
             # Linear regression model 
             lc_model = LogisticRegression()
             lc_model.fit(X_train, y_train)
             lc_acc = lc_model.score(X_test, y_test)
-            model_acc.append(['Linear Regression', lc_acc])
-
+            model_acc = [['Linear Regression', lc_acc]]
             # Decision Tree model 
             dtc_model = DecisionTreeClassifier()
             dtc_model.fit(X_train, y_train)

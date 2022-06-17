@@ -5,7 +5,7 @@ from pages import utils
 import os
 
 def app():
-	
+
 	if 'main_data.csv' not in os.listdir('data'):
 		st.markdown("Please upload data through `Upload Data` page!")
 	else:

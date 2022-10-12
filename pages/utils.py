@@ -39,11 +39,11 @@ def genMetaData(df):
         if isCategorical(df[col[i]]):
             ColumnType.append((col[i],"categorical"))
             Categorical.append(col[i])
-        
+
         elif is_numeric_dtype(df[col[i]]):
             ColumnType.append((col[i],"numerical"))
             Numerical.append(col[i])
-        
+
         else:
             ColumnType.append((col[i],"object"))
             Object.append(col[i])
@@ -51,10 +51,8 @@ def genMetaData(df):
     return ColumnType
 
 def makeMapDict(col): 
-    uniqueVals = list(np.unique(col))
-    uniqueVals.sort()
-    dict_ = {uniqueVals[i]: i for i in range(len(uniqueVals))}
-    return dict_
+    uniqueVals = sorted(np.unique(col))
+    return {uniqueVals[i]: i for i in range(len(uniqueVals))}
 
 def mapunique(df, colName):
     dict_ = makeMapDict(df[colName])
@@ -66,16 +64,11 @@ def mapunique(df, colName):
 ## For redundant columns
 def getRedundentColumns(corr, y: str, threshold =0.1): 
     cols = corr.columns
-    redunt = []
     k = 0
-    for ind, c in enumerate(corr[y]):
-        if c<1-threshold: 
-            redunt.append(cols[ind])
-    return redunt
+    return [cols[ind] for ind, c in enumerate(corr[y]) if c<1-threshold]
 
 def newDF(df, columns2Drop):
-    newDF = df.drop(columns2Drop, axis = 'columns')
-    return newDF
+    return df.drop(columns2Drop, axis = 'columns')
 
 if __name__ == '__main__':
     df = {"Name": ["salil", "saxena", "for", "int"]}

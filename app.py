@@ -19,12 +19,20 @@ col1, col2 = st.beta_columns(2)
 col1.image(display, width = 400)
 col2.title("Data Storyteller Application")
 
-# Add all your application here
-app.add_page("Upload Data", data_upload.app)
-app.add_page("Change Metadata", metadata.app)
-app.add_page("Machine Learning", machine_learning.app)
-app.add_page("Data Analysis",data_visualize.app)
-app.add_page("Y-Parameter Optimization",redundant.app)
+# Dropdown menu for page selection
+selected_page = st.selectbox("Select Page", ["Upload Data", "Change Metadata", "Machine Learning", "Data Analysis", "Y-Parameter Optimization"])
+
+# Add all your application pages
+if selected_page == "Upload Data":
+    app.add_page("Upload Data", data_upload.app)
+elif selected_page == "Change Metadata":
+    app.add_page("Change Metadata", metadata.app)
+elif selected_page == "Machine Learning":
+    app.add_page("Machine Learning", machine_learning.app)
+elif selected_page == "Data Analysis":
+    app.add_page("Data Analysis", data_visualize.app)
+elif selected_page == "Y-Parameter Optimization":
+    app.add_page("Y-Parameter Optimization", redundant.app)
 
 # The main app
 app.run()
